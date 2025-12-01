@@ -116,7 +116,7 @@ export default function Topbar() {
           
           {/* Left: Logo */}
           <div className="flex items-center gap-2 sm:gap-4">
-            <img src="/images/logo RASID.png" alt="logo" className="w-32 sm:w-32" />
+            <img src="/images/logo RASID.png" alt="logo" className="w-48 sm:w-48" />
             <h1 className="text-white font-poppins text-[24px] sm:text-[34px] leading-[23px] sm:leading-[32px] tracking-[0%]">
               <span className="font-semibold">RASID</span>{" "}
               <span className="font-light">Platform</span>

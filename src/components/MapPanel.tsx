@@ -12,7 +12,9 @@ export default function MapPanel() {
     // إنشاء WebMap
     const map = new WebMap({
       // basemap: "topo-vector", 
-        basemap: "dark-gray-vector"
+        // basemap: "dark-gray-vector"
+        basemap: "dark-gray"
+
     });
 
     // إنشاء MapView
@@ -38,27 +40,27 @@ export default function MapPanel() {
   }, []);
 
   return (
-    <div className="max-w-[1400px] mx-auto bg-[#071e22] rounded-xl overflow-hidden  ">
-      <div className="relative h-[420px]">
+    <div className="w-full bg-[#071e22] rounded-xl overflow-hidden  ">
+      <div className="relative h-[420px] ">
         <div ref={mapRef} className="w-full h-full" />
         {/* top-left small buttons */}
         <div className="absolute top-4 left-4 flex gap-2">
-          <button className="bg-[#0d2e32] p-2 rounded-md border border-teal-700">🗺️</button>
-          <button className="bg-[#0d2e32] p-2 rounded-md border border-teal-700">🔍</button>
+                      <img src="/images/layer1.png" alt="layer1" className="w-20 sm:w-20" />
         </div>
 
-        {/* right toolbar */}
-        <div className="absolute right-4 top-28 flex flex-col gap-2">
-          <button className="bg-[#0d2e32] p-2 rounded-md border border-teal-700">+</button>
-          <button className="bg-[#0d2e32] p-2 rounded-md border border-teal-700">−</button>
-          <button className="bg-[#0d2e32] p-2 rounded-md border border-teal-700">3D</button>
+        {/* right toolbar/ */}
+        <div className="absolute right-4 top-5 flex flex-col gap-2">
+                      <img src="/images/layer2.png" alt="layer2" className="w-8 sm:w-8" />
+          
+          <button className="bg-[#fff] p-2 rounded-md text-[#0D212C]">3D</button>
         </div>
 
         {/* risk legend */}
-        <div className="absolute right-6 bottom-10 bg-[#07282d] p-3 rounded-md border border-teal-800 text-xs">
-          <div className="font-semibold mb-2">Risk Score</div>
-          <div className="h-1 bg-gradient-to-r from-red-600 via-yellow-400 to-green-500 rounded" />
-        </div>
+        <div className="absolute right-6 bottom-2 bg-[#0D212CE5] p-3 rounded-md text-sm flex flex-col items-center w-28 sm:w-28">
+  <div className="font-semibold mb-2">Risk Score :</div>
+  <img src="/images/Risk Score.png" alt="Risk Score" className="w-14 sm:w-14" />
+</div>
+
       </div>
     </div>
   );
