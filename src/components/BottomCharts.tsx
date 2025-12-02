@@ -163,8 +163,7 @@ export default function DashboardCharts() {
     ],
   };
 
-
- const options: any = {
+const options: ChartOptions<"line"> = {
   responsive: true,
   plugins: {
     legend: { display: false },
@@ -178,12 +177,35 @@ export default function DashboardCharts() {
   scales: {
     x: {
       grid: { color: "rgba(255,255,255,0.05)" },
-      ticks: { color: "#c9e7ff" },
+      ticks: {
+        color: "#c9e7ff",
+        font: { size: 10 },
+        maxRotation: 0,
+        minRotation: 0,
+        callback(value) {
+          const label = this.getLabelForValue(Number(value)) as string;
+          const maxLength = 10; // طول الكلمة قبل التكسير
+          if (label.length > maxLength) {
+            return label.match(new RegExp(`.{1,${maxLength}}`, "g"));
+          }
+          return label;
+        },
+      },
     },
     y: {
-      min: 0, // مهم جداً يبدأ من الصفر
+      min: 0,
+      max: 400000, // أقصى قيمة
       grid: { color: "rgba(255,255,255,0.10)" },
-      ticks: { color: "#c9e7ff" },
+      ticks: {
+        color: "#c9e7ff",
+        font: { size: 10 },
+        stepSize: 100000, // القيم المطلوبة فقط
+        callback(value) {
+          // لو القيمة هي max ما نعرضش رقم
+          if (value === 400000) return '';
+          return Number(value);
+        },
+      },
     },
   },
 };
@@ -246,7 +268,7 @@ export default function DashboardCharts() {
 
 
   return (
-    <div className="w-full min-h-screen bg-[#0A1A23] text-white p-4 flex flex-col gap-6">
+    <div className="w-full min-h-screen bg-[#0A1A23] text-white p-12 flex flex-col gap-6">
       <div className="flex gap-3">
         {["Week", "Month", "Quarter", "Year"].map((t, i) => (
           <button
@@ -273,8 +295,8 @@ export default function DashboardCharts() {
           </div>
         </div>
         {/* ---- Line Chart ---- */}
-          <div className="bg-[#12323D] p-4 rounded-xl shadow-xl h-[350px] flex flex-col relative">
-          <h2 className="text-lg font-semibold mb-2">
+          <div className="bg-[#12323D] p-8 rounded-xl shadow-xl h-[350px] flex flex-col relative">
+          <h2 className="text-lg font-semibold -mb-2">
             Top 10 Risks by Location
           </h2>
 
@@ -283,7 +305,7 @@ export default function DashboardCharts() {
             <Line data={data} options={options} />
 
             {/* الصورة تعلق على آخر محور X */}
-            <div className="absolute -right-8 bottom-52 sm:bottom-0">
+            <div className="absolute -right-7 bottom-44 sm:bottom-0 -mb-12">
   <img
     src="/images/Frame 1.svg"
     alt="logo"
