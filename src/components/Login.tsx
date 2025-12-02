@@ -2,12 +2,9 @@ import  { useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
-interface Props {
-  onAccess: () => void;
-}
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export default function RequestAccess({ onAccess }: Props) {
+export default function RequestAccess() {
   const [show, setShow] = useState(true);
   const navigate = useNavigate(); 
 
