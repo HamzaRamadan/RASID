@@ -49,7 +49,6 @@ export default function SampleOverview() {
               />
             </div>
 
-            {/* البطاقة الفرعية */}
            <div className="flex  gap-0">
   {/* الرقم + Active */}
   <div className="flex-1 flex items-center gap-1">
