@@ -9,7 +9,6 @@ export default function MapPanel() {
   useEffect(() => {
     if (!mapRef.current) return;
 
-    // إنشاء WebMap
     const map = new WebMap({
         basemap: "dark-gray"
 
@@ -19,7 +18,7 @@ export default function MapPanel() {
     const view = new MapView({
       container: mapRef.current,
       map: map,
-      center: [31.2357, 30.0444], // طول وعرض مصر تقريبا
+      center: [31.2357, 30.0444],
       zoom: 6,
     });
 

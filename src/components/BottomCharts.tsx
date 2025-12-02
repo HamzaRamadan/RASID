@@ -114,7 +114,6 @@ export default function DashboardCharts() {
         backgroundColor: "#36C0C9",
         borderRadius: 6,
 
-        // ❌ شيلنا أي points نهائيًا
         pointRadius: 0,
         pointHoverRadius: 0,
       },
@@ -124,7 +123,6 @@ export default function DashboardCharts() {
         backgroundColor: "#555555",
         borderRadius: 6,
 
-        // ❌ برضو شيلنا أي نقط
         pointRadius: 0,
         pointHoverRadius: 0,
       },
@@ -184,7 +182,7 @@ const options: ChartOptions<"line"> = {
         minRotation: 0,
         callback(value) {
           const label = this.getLabelForValue(Number(value)) as string;
-          const maxLength = 10; // طول الكلمة قبل التكسير
+          const maxLength = 10; 
           if (label.length > maxLength) {
             return label.match(new RegExp(`.{1,${maxLength}}`, "g"));
           }
@@ -194,12 +192,12 @@ const options: ChartOptions<"line"> = {
     },
     y: {
       min: 0,
-      max: 400000, // أقصى قيمة
+      max: 400000, 
       grid: { color: "rgba(255,255,255,0.10)" },
       ticks: {
         color: "#c9e7ff",
         font: { size: 10 },
-        stepSize: 100000, // القيم المطلوبة فقط
+        stepSize: 100000, 
         callback(value) {
           // لو القيمة هي max ما نعرضش رقم
           if (value === 400000) return '';
@@ -268,7 +266,7 @@ const options: ChartOptions<"line"> = {
 
 
   return (
-    <div className="w-full min-h-screen bg-[#0A1A23] text-white p-12 flex flex-col gap-6">
+    <div className="w-full  bg-[#0A1A23] text-white p-12 flex flex-col gap-6">
       <div className="flex gap-3">
         {["Week", "Month", "Quarter", "Year"].map((t, i) => (
           <button

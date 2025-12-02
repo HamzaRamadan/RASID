@@ -22,7 +22,6 @@ export default function RequestAccess() {
         <p className="mb-6 opacity-80 text-sm text-center md:text-left">
           Please login to continue to your account. </p>
 
-        {/* <form className="space-y-4 w-full max-w-md mx-auto"> */}
 <form className="space-y-3 w-9/12 max-w-[320px] mx-auto">
 
 
