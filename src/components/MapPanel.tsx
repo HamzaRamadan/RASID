@@ -11,8 +11,6 @@ export default function MapPanel() {
 
     // إنشاء WebMap
     const map = new WebMap({
-      // basemap: "topo-vector", 
-        // basemap: "dark-gray-vector"
         basemap: "dark-gray"
 
     });
@@ -40,9 +38,10 @@ export default function MapPanel() {
   }, []);
 
   return (
-    <div className="w-full bg-[#071e22] rounded-xl overflow-hidden  ">
-      <div className="relative h-[420px] ">
-        <div ref={mapRef} className="w-full h-full" />
+<div className="w-screen ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] bg-[#071e22] overflow-hidden">
+  <div className="relative w-screen h-[420px]">
+    <div ref={mapRef} className="w-full h-full " />
+
         {/* top-left small buttons */}
         <div className="absolute top-4 left-4 flex gap-2">
                       <img src="/images/layer1.png" alt="layer1" className="w-20 sm:w-20" />

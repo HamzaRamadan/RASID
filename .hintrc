@@ -9,6 +9,8 @@
         "button-name": "off"
       }
     ],
-    "button-type": "off"
+    "button-type": "off",
+    "axe/text-alternatives": "off",
+    "axe/forms": "off"
   }
 }

@@ -49,7 +49,7 @@ const cardData = [
 
 export default function DashboardCards() {
   return (
-    <div className="w-full flex justify-center px-4">
+    <div className="w-full flex justify-center px-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-[1400px]">
         {cardData.map((card, index) => (
           <div
@@ -100,7 +100,7 @@ export default function DashboardCards() {
     <img
       src={card.imgCard}
       alt="icon"
-      className="w-10 h-10 -mt-2"
+      className="w-10 h-10 -mt-2 -ml-1"
     />
   </div>
 </div>
