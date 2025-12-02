@@ -154,8 +154,8 @@ export default function CardsPage() {
   const SingleCard = ({ data }: any) => {
     return (
       <div className="w-full flex justify-start px-8 ">
-        <div className="w-[400px]">
-          <div className="rounded-3xl py-3 px-4 shadow-md flex flex-col justify-between cursor-pointer bg-[#152833F2] border border-[#1f3b52] transition-all duration-200">
+        <div className="w-[400px] bg-[#152833F2] p-2">
+          <div className="rounded-3xl py-3 px-4 shadow-md flex flex-col justify-between cursor-pointer border border-[#1f3b52] bg-[#5B7E9573] transition-all duration-200">
 
             {/* Title */}
             <div className="flex justify-between items-center">
