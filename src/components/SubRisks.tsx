@@ -41,7 +41,7 @@ export default function CardsPage() {
   const SingleCard = ({ data }: any) => {
     return (
       <div className="w-full flex justify-start px-8">
-        <div className="w-[335px] rounded-xl border-2 border-[#1f3b52]  bg-[#152833F2] p-2">
+        <div className="w-[335px]  border-2 border-[#152833F2]  bg-[#152833F2] p-2">
           <div className="rounded-3xl py-3 px-4 shadow-md flex flex-col justify-between cursor-pointer border border-[#1f3b52] bg-[#5B7E9573] transition-all duration-200">
 
             {/* Title */}
