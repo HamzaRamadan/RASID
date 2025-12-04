@@ -31,7 +31,7 @@ export default function SampleOverview() {
         {cardData.map((card, index) => (
           <div
              key={index}
-            className={`rounded-3xl p-2 h-32 shadow-md flex flex-col justify-between ${
+            className={`rounded-3xl p-2 min-h-[150px] shadow-md flex flex-col justify-between ${
               index === 0
                 ? "bg-[#33F3FF52] border-2 border-white"
                 : "bg-[#36C0C940]"

@@ -62,7 +62,7 @@ export default function RiskTrends() {
           <div
             key={index}
             onClick={() => index === 0 && setOpen(!open)}
-            className={`rounded-3xl p-2 shadow-md flex flex-col justify-between cursor-pointer transition-all duration-200
+            className={`rounded-3xl p-2 min-h-[150px] shadow-md flex flex-col justify-between cursor-pointer transition-all duration-200
               ${index === 0 ? "bg-[#33F3FF52] border-2 border-white" : "bg-[#36C0C940]"}
             `}
           >
@@ -128,7 +128,7 @@ export default function RiskTrends() {
       </div>
 
       {open && (
-        <div className="absolute left-0 right-0 top-[180px] z-50">
+        <div className="absolute left-0 right-0 top-[165px] z-50">
           <RiskDropDown />
         </div>
       )}
